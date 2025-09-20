@@ -9,12 +9,14 @@ This project applies **Object-Oriented Programming (OOP)** with multiple classes
 
 ## 📂 Project Structure
 
+```
 Coffee-Machine/
 │── coffee_maker.py # Handles resources and making coffee
 │── money_machine.py # Manages coins and transactions
 │── menu.py # Defines drinks and menu
 │── main.py # Entry point for the program
 │── README.md # Documentation
+``` 
 
 ---
 

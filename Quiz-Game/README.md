@@ -7,6 +7,7 @@ This project demonstrates object-oriented programming (OOP) concepts such as cla
 
 ## 📂 Project Structure
 
+``` 
 Quiz-Game/
 │── art.py # ASCII art / title screen
 │── data.py # Quiz questions data
@@ -14,6 +15,7 @@ Quiz-Game/
 │── question_model.py # Defines the Question class
 │── quiz_brain.py # Handles the quiz logic
 │── README.md # Documentation
+``` 
 
 ## 🚀 How to Run
 
@@ -29,13 +31,9 @@ Quiz-Game/
 ## 🧩 How It Works
 
 Question class: Represents each question with its text and answer.
-
 QuizBrain class: Controls the flow of the quiz (asking questions, checking answers, tracking score).
-
 main.py: Initializes the game, loads the questions, and starts the quiz loop.
-
 data.py: Provides the question set. You can add more questions here.
-
 art.py: Optional ASCII art to display at the start of the game.
 
 ## ✨ Example Gameplay
@@ -53,19 +51,13 @@ Your current score is: 2/2
 ## 🛠️ Features
 
 Object-Oriented Design
-
 Modular code (easy to extend with new features)
-
 Simple and interactive CLI game
-
 Tracks score dynamically
 
 ## 📌 Future Improvements
 
 Add multiple-choice questions
-
 Store questions in an external JSON/CSV file
-
 Build a GUI version with Tkinter or PyQt
-
 Fetch questions dynamically from an API
