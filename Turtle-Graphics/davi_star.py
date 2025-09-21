@@ -4,7 +4,6 @@ from turtle import Turtle, Screen
 import random
 
 tim = Turtle()
-tim.shape("turtle")
 tim.hideturtle()
 tim.speed(10)
 tim.pensize(1)
