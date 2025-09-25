@@ -9,26 +9,35 @@ class Scoreboard(Turtle):
     """ Score Board """
     def __init__(self):
         super().__init__()
-        self.score = Turtle()
-        self.score.hideturtle()
-        self.score.penup()
-        self.score.color('white')
-        self.score.goto(0, 260)
+        self.high_score = 0
+        self.hideturtle()
+        self.penup()
+        self.color('white')
+        self.goto(0, 260)
         self.total = 0
         self.refresh()
 
     def refresh(self):
         """ Score Board Refresh """ 
-        self.total += 1
-        self.score.clear()
-        self.score.write(f'Score: {self.total - 1}', \
+        self.clear()
+        self.write(f'Score: {self.total} High Score: {self.high_score}', \
                          align = ALIGMENT, \
                          font = FONT)
 
-    def game_over(self):
-        """ GAME OVER """
-        self.score.goto(0,0)
-        self.score.write(f'GAME OVER', \
-                    align = ALIGMENT, \
-                    font = FONT)
-        
+    def increase_score(self):
+        """ Increase Score """
+        self.total += 1
+        self.refresh()
+
+#    def game_over(self):
+#        """ GAME OVER """
+#        self.goto(0,0)
+#        self.write('GAME OVER', \
+#                    align = ALIGMENT, \
+#                    font = FONT)
+
+    def reset(self):
+        self.high_score = max(self.high_score, self.total)
+        self.total = 0
+        self.refresh()
+

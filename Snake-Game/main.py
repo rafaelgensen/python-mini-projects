@@ -33,8 +33,9 @@ while GAME:
         print("nom nom nom")
         print(score.total)
         food.refresh()
-        score.refresh()
+        score.increase_score()
         snake.extend()
+
 
     # Detect collision with wall.
 
@@ -42,13 +43,13 @@ while GAME:
         snake.head.xcor() <= -300 or \
         snake.head.ycor() >= 300 or \
         snake.head.ycor() <= -300:
-        GAME = False
+        score.reset()
+        snake.reset()
 
     # Detect collision with tail
     for segment in snake.segments[1:]:
         if snake.head.distance(segment) < 10:
-            GAME = False
+            score.reset()
+            snake.reset()
 
-score.game_over()
-print(f"You lost, your score: {score.total}")
 SCREEN.exitonclick()
