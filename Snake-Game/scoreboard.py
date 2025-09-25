@@ -1,6 +1,7 @@
 """ Score Board """
 
 from turtle import Turtle
+import os
 
 ALIGMENT = "center"
 FONT = ("Courier", 24, "normal")
@@ -9,7 +10,8 @@ class Scoreboard(Turtle):
     """ Score Board """
     def __init__(self):
         super().__init__()
-        self.high_score = 0
+        with open(os.path.join(os.path.dirname(__file__), "data.txt"), encoding="utf-8") as data:
+            self.high_score = int(data.read())
         self.hideturtle()
         self.penup()
         self.color('white')
@@ -29,15 +31,10 @@ class Scoreboard(Turtle):
         self.total += 1
         self.refresh()
 
-#    def game_over(self):
-#        """ GAME OVER """
-#        self.goto(0,0)
-#        self.write('GAME OVER', \
-#                    align = ALIGMENT, \
-#                    font = FONT)
-
     def reset(self):
         self.high_score = max(self.high_score, self.total)
+        with open(os.path.join(os.path.dirname(__file__), "data.txt"), \
+                  mode = "w", encoding="utf-8") as file:
+            file.write(f"{self.high_score}")
         self.total = 0
         self.refresh()
-
