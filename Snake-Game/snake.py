@@ -68,3 +68,11 @@ class Snake():
             return self.segments[0].right(90)
         if self.segments[0].heading() == 180:
             return self.segments[0].left(90)
+
+    def reset(self):
+        """ Reset Snake """
+        for seg in self.segments:
+            seg.goto(1000, 1000)
+        self.segments.clear()
+        self.start()
+        self.head = self.segments[0]
